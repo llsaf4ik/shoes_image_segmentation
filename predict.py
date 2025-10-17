@@ -161,7 +161,7 @@ class ResUNet(nn.Module):
     def __init__(self, classes=2, img_size=512):
         super().__init__()
         self.channels = [32, 24, 32, 48, 136, 384, 512]  
-        backbone = efficientnet_b3(weights='DEFAULT').features
+        backbone = efficientnet_b3().features
         self.block0 = nn.Sequential(
             backbone[0],
             backbone[1]
